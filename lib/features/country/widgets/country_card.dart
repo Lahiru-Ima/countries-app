@@ -12,15 +12,16 @@ class CountryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: size.width * 0.04),
       child: ListTile(
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(5),
           child: Image.network(
             country.flag,
-            width: 50,
-            height: 40,
+            width: size.width * 0.15,
+            height: size.height * 0.06,
             fit: BoxFit.cover,
           ),
         ),

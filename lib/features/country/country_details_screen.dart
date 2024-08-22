@@ -8,14 +8,14 @@ class CountryDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(country.name),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(size.width * 0.1),
+        child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -23,12 +23,12 @@ class CountryDetails extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 child: Image.network(
                   country.flag,
-                  width: 400,
-                  height: 150,
+                  width: size.width * 0.8,
+                  height: size.height * 0.2,
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: size.height * 0.02),
               Text('Name: ${country.name}',
                   style: const TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold)),
